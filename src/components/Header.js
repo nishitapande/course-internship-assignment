@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import AuthContext from "./AuthContext";
 const Header = () => {
+  const { user } = useContext(AuthContext);
+
   return (
     <div>
       <Navbar
@@ -20,16 +23,17 @@ const Header = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
               <Nav.Link href="/">Home</Nav.Link>
-              <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">
-                  My Profile
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                  My Courses
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">LogOut</NavDropdown.Item>
-              </NavDropdown>
+              {user ? (
+                <NavDropdown title={user.name} id="basic-nav-dropdown">
+                  <NavDropdown.Item href="/dashboard">
+                    My Courses
+                  </NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item href="#action/3.4">LogOut</NavDropdown.Item>
+                </NavDropdown>
+              ) : (
+                <Nav.Link href="/">Login</Nav.Link>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>

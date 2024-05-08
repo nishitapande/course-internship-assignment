@@ -14,7 +14,7 @@ const StudentDashboard = () => {
       const res = await axios.get(
         `http://localhost:8080/v1/api/user/${user._id}/courses`
       );
-      console.log(res.data);
+      //console.log(res.data);
       setUserInfo(res.data);
     })();
   }, []);
@@ -26,37 +26,74 @@ const StudentDashboard = () => {
         <Row>
           <Col md={2}>
             <ListGroup>
-              <ListGroup.Item>Thumbnail</ListGroup.Item>
+              <ListGroup.Item
+                style={{
+                  border: "none",
+                }}
+              ></ListGroup.Item>
             </ListGroup>
           </Col>
           <Col md={2}>
             <ListGroup>
-              <ListGroup.Item>Name</ListGroup.Item>
+              <ListGroup.Item
+                style={{
+                  border: "none",
+                }}
+              >
+                Name
+              </ListGroup.Item>
             </ListGroup>
           </Col>
           <Col md={2}>
             <ListGroup>
-              <ListGroup.Item>Instructor</ListGroup.Item>
+              <ListGroup.Item
+                style={{
+                  border: "none",
+                }}
+              >
+                Instructor
+              </ListGroup.Item>
             </ListGroup>
           </Col>
           <Col>
             <ListGroup>
-              <ListGroup.Item>Due Date</ListGroup.Item>
+              <ListGroup.Item
+                style={{
+                  border: "none",
+                }}
+              >
+                Due Date
+              </ListGroup.Item>
             </ListGroup>
           </Col>
           <Col>
             <ListGroup>
-              <ListGroup.Item>Status</ListGroup.Item>
+              <ListGroup.Item
+                style={{
+                  border: "none",
+                }}
+              >
+                Status
+              </ListGroup.Item>
             </ListGroup>
           </Col>
         </Row>
 
         {userInfo.map((info) => {
           return (
-            <Row key={info.key}>
+            <Row
+              key={info.key}
+              style={{
+                marginTop: "20px ",
+              }}
+            >
               <Col md={2}>
                 <ListGroup>
-                  <ListGroup.Item>
+                  <ListGroup.Item
+                    style={{
+                      border: "none",
+                    }}
+                  >
                     <Image
                       src={info.thumbnail}
                       style={{
@@ -69,12 +106,26 @@ const StudentDashboard = () => {
               </Col>
               <Col Col md={2}>
                 <ListGroup>
-                  <ListGroup.Item> {info.name} </ListGroup.Item>
+                  <ListGroup.Item
+                    style={{
+                      border: "none",
+                    }}
+                  >
+                    {" "}
+                    {info.name}{" "}
+                  </ListGroup.Item>
                 </ListGroup>
               </Col>
               <Col>
                 <ListGroup>
-                  <ListGroup.Item> {info.instructor} </ListGroup.Item>
+                  <ListGroup.Item
+                    style={{
+                      border: "none",
+                    }}
+                  >
+                    {" "}
+                    {info.instructor}{" "}
+                  </ListGroup.Item>
                 </ListGroup>
               </Col>
               {/* 

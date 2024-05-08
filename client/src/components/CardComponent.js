@@ -18,7 +18,7 @@ const CardComponent = ({ course }) => {
         </Card.Text>
         <Card.Text> {course.description}</Card.Text>
         <Link to={`course/${course._id}`}>
-          <Button variant="primary">Go somewhere</Button>
+          <Button variant="primary">Details</Button>
         </Link>
       </Card.Body>
     </Card>

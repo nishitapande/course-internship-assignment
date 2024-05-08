@@ -32,7 +32,7 @@ const Header = () => {
                   <NavDropdown.Item href="#action/3.4">LogOut</NavDropdown.Item>
                 </NavDropdown>
               ) : (
-                <Nav.Link href="/">Login</Nav.Link>
+                <Nav.Link href="/login">Login</Nav.Link>
               )}
             </Nav>
           </Navbar.Collapse>

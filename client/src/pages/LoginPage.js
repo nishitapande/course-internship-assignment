@@ -61,10 +61,7 @@ const LoginPage = () => {
       </Form>
       <Row className="my-3">
         <Col>
-          New Customer ?{" "}
-          <Link to={redirect ? `/signup?redirect=${redirect}` : `/signup`}>
-            Register
-          </Link>
+          New Customer ? <Link to={`/signup`}>Register</Link>
         </Col>
       </Row>
     </div>

@@ -23,6 +23,8 @@ const SignUpPage = () => {
         password,
       }
     );
+    alert("User created successfully ");
+    navigate("/login");
   };
   return (
     <div>

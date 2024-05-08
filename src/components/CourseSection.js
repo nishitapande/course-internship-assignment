@@ -2,13 +2,12 @@ import React, { useEffect, useState } from "react";
 import CardComponent from "./CardComponent";
 import axios from "axios";
 import { Row, Col } from "react-bootstrap";
+axios.defaults.withCredentials = "true";
 const CourseSection = () => {
   const [courses, setCourses] = useState([]);
   useEffect(() => {
     (async () => {
-      const res = await axios.get(
-        "https://courses-api-production.up.railway.app/v1/api/course"
-      );
+      const res = await axios.get("http://localhost:8080/v1/api/course");
       setCourses(res.data);
     })();
   });

@@ -2,6 +2,9 @@ import React, { useState, useEffect, useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Form, Button, Row, Col } from "react-bootstrap";
 import AuthContext from "../components/AuthContext";
+import axios from "axios";
+
+axios.defaults.withCredentials = "true";
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

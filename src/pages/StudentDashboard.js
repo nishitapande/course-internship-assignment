@@ -3,6 +3,9 @@ import { Col, Container, ListGroup, Row, Image } from "react-bootstrap";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import AuthContext from "../components/AuthContext";
+
+axios.defaults.withCredentials = "true";
+
 const StudentDashboard = () => {
   const { user } = useContext(AuthContext);
   const [userInfo, setUserInfo] = useState([]);
